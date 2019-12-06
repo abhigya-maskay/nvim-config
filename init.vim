@@ -85,9 +85,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Townk/vim-autoclose'
-Plug 'Badacadabra/vim-archery'
 Plug 'itchyny/lightline.vim'
 Plug 'reasonml-editor/vim-reason-plus'
+Plug 'mhartington/oceanic-next'
 call plug#end()
 
 "remap Esc to fd
@@ -116,9 +116,9 @@ map <Leader>n :NERDTreeToggle<CR>
 
 
 "ColorScheme 
-colorscheme archery
+if (has("termguicolors"))
+  set termguicolors
+endif
+syntax enable 
+colorscheme OceanicNext
 
-"Lightline colorscheme
-let g:lightline = {
-      \'colorscheme': 'archery'
-      \ }

@@ -88,6 +88,9 @@ Plug 'Townk/vim-autoclose'
 Plug 'itchyny/lightline.vim'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'mhartington/oceanic-next'
+Plug 'cespare/vim-toml'
+Plug 'jceb/vim-orgmode'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 "remap Esc to fd

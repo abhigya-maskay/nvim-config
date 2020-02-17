@@ -1,15 +1,5 @@
 {
 	"languageserver": {
-		"ocaml": {
-			"command": "ocaml-language-server",
-			"args": [
-				"--stdio"
-			],
-			"filetypes": [
-				"ocaml",
-				"reason"
-			]
-		},
 		"haskell": {
 			"command": "hie-wrapper",
 			"rootPatterns": [
@@ -29,7 +19,7 @@
 			}
 		},
 		"reason": {
-			"command": "~/ocaml/reason-react/rls-linux/reason-language-server",
+			"command": "~/ocaml/rls-linux/reason-language-server",
 			"filetypes": [
 				"reason",
 				"re"

@@ -91,6 +91,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'cespare/vim-toml'
 Plug 'jceb/vim-orgmode'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'eraserhd/parinfer-rust', {'do': 'nix-shell --run \"cargo build --release \"'}
 call plug#end()
 
 "remap Esc to fd

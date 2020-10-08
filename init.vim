@@ -1,6 +1,5 @@
 "turn on relative line numbering
-:set relativenumber
-
+:set relativenumber 
 "Some defaults
 set shiftwidth=2
 set softtabstop=2
@@ -78,9 +77,12 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 "Plugins
 call plug#begin()
 Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -91,18 +93,20 @@ Plug 'mhartington/oceanic-next'
 Plug 'cespare/vim-toml'
 Plug 'jceb/vim-orgmode'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'eraserhd/parinfer-rust', {'do': 'nix-shell --run \"cargo build --release \"'}
+Plug 'mattn/emmet-vim'
+Plug 'luochen1990/rainbow'
+Plug 'guns/vim-sexp'
+Plug 'junegunn/fzf.vim'
+Plug 'mtth/scratch.vim'
 call plug#end()
 
 "remap Esc to fd
 inoremap fd <Esc>
+nnoremap fd <Esc>
+vnoremap fd <esc>
 
 "remap window controls
-nnoremap <Leader>w <C-w>
-
-"ctrlp maps for fuzzy search
-map <Leader>p :CtrlP<CR>
-map <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>b <C-w>
 
 "fugitive mapping
 map <Leader>gs :G<CR>
@@ -110,6 +114,10 @@ map <Leader>gd :Gdiffsplit<CR>
 map <Leader>gp :Gpush<CR>
 map <Leader>gu :Gpull<CR>
 map <Leader>gc :Gcommit<CR>
+
+"Mappings for fzf
+nmap <Leader>ff :Files<CR>
+nmap <Leader>pf :GFiles<CR>
 
 "autostart Nerdtree if no file opened
 autocmd StdinReadPre * let s:std_n=1
@@ -126,3 +134,19 @@ endif
 syntax enable 
 colorscheme OceanicNext
 
+" Vim fireplace maps
+autocmd FileType clojure nnoremap <buffer> <localleader>re :Eval<cr>
+autocmd FileType clojure vnoremap <buffer> <localleader>re :Eval<cr>
+autocmd FileType clojure nnoremap <buffer> <localleader>rf :%Eval<cr>
+autocmd FileType clojure nnoremap <buffer> <localleader>rr :Require<cr>
+autocmd FileType clojure nnoremap <buffer> <localleader>rR :Require!<cr>
+autocmd FileType clojure nnoremap <buffer> <localleader>rc :FireplaceConnect<cr>
+
+"Emmet vim remap
+let g:user_emmet_leader_key='<localleader>'
+
+"Enable rainbow parentheses
+let g:rainbow_active = 1
+
+"Disable scratch autoclose
+let g:scratch_insert_autohide = 0

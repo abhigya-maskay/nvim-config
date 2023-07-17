@@ -3,59 +3,96 @@ local wk = require("which-key")
 wk.register({
   f = {
     name = "File",
-    f = {":Oil --float ~<cr>", "Find File"},
-    c = {":Oil --float %:.:h<cr>", "Find File in cwd"}
+    f = { ":Oil --float ~<cr>", "Find File" },
+    c = { ":Oil --float %:.:h<cr>", "Find File in cwd" }
   },
   p = {
     name = "Project",
-    f = {":Oil --float .<cr>", "Find File in Project"}
+    f = { ":Oil --float .<cr>", "Find File in Project" }
   },
   b = {
     name = "Buffer",
-    d = {":bd<cr>", "Delete current buffer"}
+    d = { ":bd<cr>", "Delete current buffer" }
   },
   w = {
     name = "Window",
-    s = {"<C-w>s", "Split window horizontally"},
-    v = {"<C-w>v", "Split window vertically"},
-    d = {":q<cr>", "Close current window"},
-    h = {"<C-w>h", "Focus window left"},
-    j = {"<C-w>j", "Focus window down"},
-    k = {"<C-w>k", "Focus window up"},
-    l = {"<C-w>l", "Focus window right"},
-    H = {"<C-w>H", "Move window left"},
-    J = {"<C-w>L", "Move window down"},
-    K = {"<C-w>K", "Move window up"},
-    L = {"<C-w>L", "Move window right"}
+    s = { "<C-w>s", "Split window horizontally" },
+    v = { "<C-w>v", "Split window vertically" },
+    d = { ":q<cr>", "Close current window" },
+    h = { "<C-w>h", "Focus window left" },
+    j = { "<C-w>j", "Focus window down" },
+    k = { "<C-w>k", "Focus window up" },
+    l = { "<C-w>l", "Focus window right" },
+    H = { "<C-w>H", "Move window left" },
+    J = { "<C-w>L", "Move window down" },
+    K = { "<C-w>K", "Move window up" },
+    L = { "<C-w>L", "Move window right" }
   },
   n = {
     name = "Notifications",
-    q = {function () 
+    q = { function()
       require("notify").dismiss({ silent = true, pending = true })
-    end, "Dismiss all notifications"}
+    end, "Dismiss all notifications" }
   },
   t = {
     name = "Telescope",
     f = {
-      function () 
-        require("telescope.builtin").find_files()
-      end, 
+      require("telescope.builtin").find_files,
       "Find files"
     },
     g = {
-      function ()
-        require("telescope.builtin").live_grep()
-      end,
+      require("telescope.builtin").live_grep,
       "Live search folders"
     },
     b = {
-      function ()
-        require("telescope.builtin").buffers()
-      end,
+      require("telescope.builtin").buffers,
       "Search through buffers"
     }
+  },
+  l = {
+    name = "LSP",
+    g = {
+      name = "Go to",
+      d = {
+        vim.lsp.buf.definition,
+        "Definition"
+      },
+      D = {
+        vim.lsp.buf.declaration,
+        "Declaration"
+      },
+      i = {
+        vim.lsp.buf.implementation,
+        "Implementation"
+      },
+      t = {
+        vim.lsp.buf.type_definition,
+        "Type definition"
+      },
+      r = {
+        vim.lsp.buf.references,
+        "References"
+      },
+      s = {
+        vim.lsp.buf.signature_help(),
+        "Signature Help"
+      }
+    },
+    d = {
+      vim.diagnostic.open_float
+      ,
+      "Open diagnostics"
+    },
+    h = {
+      vim.lsp.buf.hover,
+      "Hover Diagnostics"
+    },
+    f = {
+      vim.lsp.buf.format,
+      "Format"
+    }
   }
-}, {prefix = "<leader>"})
+}, { prefix = "<leader>" })
 
 wk.register({
   g = {

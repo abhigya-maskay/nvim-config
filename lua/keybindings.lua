@@ -91,6 +91,21 @@ wk.register({
       vim.lsp.buf.format,
       "Format"
     }
+  },
+  s = {
+    name = "Search",
+    f = {
+      require("fzf-lua").files,
+      "Find Files"
+    },
+    b = {
+      require("fzf-lua").buffers,
+      "Find Buffers"
+    },
+    g = {
+      require("fzf-lua").live_grep,
+      "Live grep current project"
+    }
   }
 }, { prefix = "<leader>" })
 

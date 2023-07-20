@@ -4,7 +4,8 @@ wk.register({
   f = {
     name = "File",
     f = { ":Oil --float ~<cr>", "Find File" },
-    c = { ":Oil --float %:.:h<cr>", "Find File in cwd" }
+    c = { ":Oil --float %:.:h<cr>", "Find File in cwd" },
+    t = { ":NvimTreeToggle<cr>", "Open cwd in NvimTree" }
   },
   p = {
     name = "Project",

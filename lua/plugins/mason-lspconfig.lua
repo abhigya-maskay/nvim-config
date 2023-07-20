@@ -8,6 +8,9 @@ return {
       lsp.default_setup,
       lua_ls = function ()
         require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+      end,
+      yamlls = function ()
+        require("lspconfig").yamlls.setup({})
       end
     }
   }

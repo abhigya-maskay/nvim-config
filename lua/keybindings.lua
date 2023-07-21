@@ -107,6 +107,13 @@ wk.register({
       require("fzf-lua").live_grep,
       "Live grep current project"
     }
+  },
+  g = {
+    name = "git",
+    g = {
+      ":LazyGit<cr>",
+      "LazyGit"
+    }
   }
 }, { prefix = "<leader>" })
 

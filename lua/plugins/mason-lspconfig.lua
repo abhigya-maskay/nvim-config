@@ -11,6 +11,9 @@ return {
       end,
       yamlls = function ()
         require("lspconfig").yamlls.setup({})
+      end,
+      jdtls = function () 
+        require("lspconfig").jdtls.setup({})
       end
     }
   }

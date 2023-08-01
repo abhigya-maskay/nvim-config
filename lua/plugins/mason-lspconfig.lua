@@ -6,14 +6,17 @@ return {
   opts = {
     handlers = {
       lsp.default_setup,
-      lua_ls = function ()
+      lua_ls = function()
         require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
       end,
-      yamlls = function ()
+      yamlls = function()
         require("lspconfig").yamlls.setup({})
       end,
-      jdtls = function () 
+      jdtls = function()
         require("lspconfig").jdtls.setup({})
+      end,
+      solargraph = function()
+        require("lspconfig").solargraph.setup({})
       end
     }
   }

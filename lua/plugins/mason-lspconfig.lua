@@ -12,6 +12,11 @@ return {
       yamlls = function()
         require("lspconfig").yamlls.setup({})
       end,
+      sqlls = function ()
+        require("lspconfig").sqlls.setup({
+          root_dir = function () return vim.loop.cwd() end
+        })
+      end,
       jdtls = function()
         require("lspconfig").jdtls.setup({})
       end,

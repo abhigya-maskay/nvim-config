@@ -22,6 +22,12 @@ return {
       end,
       solargraph = function()
         require("lspconfig").solargraph.setup({})
+      end,
+      hls = function ()
+        require("lspconfig").hls.setup({})
+      end,
+      lemminx = function () 
+        require("lspconfig").lemminx.setup({})
       end
     }
   }

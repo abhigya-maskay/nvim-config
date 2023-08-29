@@ -38,7 +38,7 @@ wk.register({
   t = {
     name = "Telescope",
     f = {
-      require("telescope.builtin").find_files,
+      require("telescope.builtin").git_files,
       "Find files"
     },
     g = {
@@ -96,7 +96,7 @@ wk.register({
   s = {
     name = "Search",
     f = {
-      require("fzf-lua").files,
+      require("fzf-lua").git_files,
       "Find Files"
     },
     b = {

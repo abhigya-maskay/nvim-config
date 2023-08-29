@@ -28,6 +28,12 @@ return {
       end,
       lemminx = function () 
         require("lspconfig").lemminx.setup({})
+      end,
+      docker_compose_language_service = function()
+        require("lspconfig").docker_compose_language_service.setup({})
+      end,
+      dockerls = function()
+        require("lspconfig").dockerls.setup({})
       end
     }
   }

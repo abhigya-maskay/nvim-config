@@ -2,7 +2,7 @@ return {
   "scalameta/nvim-metals",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp"
+    "hrsh7th/nvim-cmp",
   },
   config = function ()
     local metals_config = require("metals").bare_config()

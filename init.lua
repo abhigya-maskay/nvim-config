@@ -15,6 +15,9 @@ vim.g.mapleader = " "
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
 vim.opt.listchars:append "eol:↴"
+vim.opt.nu = true
+vim.opt.relativenumber = true
+vim.o.statuscolumn = "%s %l %r "
 
 require("lazy").setup("plugins")
 require("spacing")

@@ -34,6 +34,9 @@ return {
       end,
       tsserver = function()
         require("lspconfig").tsserver.setup({})
+      end,
+      yamlls = function()
+        require("lspconfig").yamlls.setup({})
       end
     }
   }

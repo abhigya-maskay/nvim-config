@@ -37,6 +37,9 @@ return {
       end,
       yamlls = function()
         require("lspconfig").yamlls.setup({})
+      end,
+      pyrightls = function()
+        require("lspconfig").pyrightls.setup({})
       end
     }
   }

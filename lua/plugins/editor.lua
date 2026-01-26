@@ -1,5 +1,10 @@
 return {
   {
+    "ycdzj/auto-reload.nvim",
+    event = "BufReadPre",
+    opts = {},
+  },
+  {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     opts = {},

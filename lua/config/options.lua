@@ -34,3 +34,6 @@ vim.opt.scrolloff = 8
 
 -- Colors
 vim.opt.termguicolors = true
+
+-- Auto-reload files changed outside of Neovim
+vim.opt.autoread = true

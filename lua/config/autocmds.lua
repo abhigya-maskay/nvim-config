@@ -31,3 +31,10 @@ autocmd("VimResized", {
     vim.cmd("tabdo wincmd =")
   end,
 })
+
+-- Check for external file changes
+augroup("CheckFileChanges", { clear = true })
+autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  group = "CheckFileChanges",
+  command = "if mode() != 'c' | checktime | endif",
+})

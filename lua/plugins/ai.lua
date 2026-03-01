@@ -13,4 +13,7 @@ return {
       { "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
     },
   },
+  {
+    dir = "/home/ave70011/projects/copilot-iterator",
+  },
 }

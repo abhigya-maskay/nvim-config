@@ -67,6 +67,7 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "quit" })
 
 -- Terminal mode
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "exit terminal mode" })
+map("t", "<C-\\><C-\\>", "<C-\\><C-n>", { desc = "exit terminal mode" })
 map("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "window left" })
 map("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "window down" })
 map("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "window up" })
